@@ -122,14 +122,6 @@ a {
   color: #fefefe;
 }
 
-:root {
-  --radius-s: 4px;
-  --radius-m: 8px;
-  --radius-l: 16px;
-  --radius-xl: 20px;
-  --radius-xxl: 24px;
-}
-
 .section-container {
   display: flex;
   flex-direction: column;
