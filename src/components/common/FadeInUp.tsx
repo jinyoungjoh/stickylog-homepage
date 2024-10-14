@@ -1,16 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import { motion, MotionStyle } from "framer-motion";
 
 type FadeInUpProps = {
   children: React.ReactNode;
   duration?: number; // 애니메이션 지속 시간
   delay?: number; // 애니메이션 시작 전 지연 시간
+  styles?: MotionStyle;
 };
 
 const FadeInUp = ({
   children,
   duration = 0.5,
   delay = 0, // 기본값 0
+  styles,
 }: FadeInUpProps) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLDivElement | null>(null);
@@ -60,6 +62,7 @@ const FadeInUp = ({
       initial="initial"
       animate={isVisible ? "animate" : "initial"} // isVisible에 따라 애니메이션 상태 변경
       variants={variants}
+      style={styles}
     >
       {children}
     </motion.div>

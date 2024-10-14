@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { AnchorButton } from "../common/AnchorButton";
 import { APP_STORE_URL, GOOGLE_PLAYSTORE_URL } from "../../utils/constants";
+import FadeInUp from "../common/FadeInUp";
 
 const Title = styled.h1({
   textAlign: "center",
@@ -23,21 +24,21 @@ const Image = styled.img({
 const HeroSection = () => {
   return (
     <Container className="section-container">
+<FadeInUp duration={0.7}>
       <Title>
         SET, TRACK, AND ACHIEVE
         <br />
         YOUR GOALS WITH STICKY LOG
       </Title>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: 4,
-        }}
+      </FadeInUp>
+      <FadeInUp
+        delay={0.5}
+        styles={{ display: "flex", justifyContent: "center", gap: 4 }}
       >
         <AnchorButton title={"App Store"} linkHref={APP_STORE_URL} />
         <AnchorButton title={"Google Play"} linkHref={GOOGLE_PLAYSTORE_URL} />
-      </div>
+      </FadeInUp>
+
       <div
         style={{
           display: "flex",

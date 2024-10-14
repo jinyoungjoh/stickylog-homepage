@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 import { AnchorButton } from "../common/AnchorButton";
 import { APP_STORE_URL, GOOGLE_PLAYSTORE_URL } from "../../utils/constants";
+import FadeInUp from "../common/FadeInUp";
 
 const Title = styled.p({
   textAlign: "center",
@@ -17,17 +18,21 @@ const Container = styled.section({
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
+  height: "100vh",
 });
 
 export const FooterSection = () => {
   return (
     <Container className="section-container">
-      <Title>
-        건강한 습관을 만들고 싶으신가요? <br /> 목표의 시작부터 달성까지,
-        <br /> 이제 Sticky Log와 함께해요.
-      </Title>
-      <div
-        style={{
+      <FadeInUp>
+        <Title>
+          건강한 습관을 만들고 싶으신가요? <br /> 목표의 시작부터 달성까지,
+          <br /> 이제 Sticky Log와 함께해요.
+        </Title>
+      </FadeInUp>
+      <FadeInUp
+        delay={0.3}
+        styles={{
           display: "flex",
           justifyContent: "center",
           gap: 4,
@@ -35,7 +40,7 @@ export const FooterSection = () => {
       >
         <AnchorButton title={"App Store"} linkHref={APP_STORE_URL} />
         <AnchorButton title={"Google Play"} linkHref={GOOGLE_PLAYSTORE_URL} />
-      </div>
+      </FadeInUp>
     </Container>
   );
 };
